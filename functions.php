@@ -15,9 +15,7 @@ class customCountdown
 		add_action					( 'admin_enqueue_scripts',	array( $this, 'admin_scripts'	) );
 		add_action					( 'wp_enqueue_scripts',		array( $this, 'front_scripts'	) );
 		add_action					( 'wp_footer',				array( $this, 'footer_dates'	) );		
-		
 		add_filter					( 'admin_footer_text',		array( $this, 'ccd_footer'		) );
-		register_activation_hook	( __FILE__, 				array( $this, 'store_settings'	) );
 	}
 
 
@@ -64,30 +62,6 @@ class customCountdown
 
 	}
 
-	/**
-	 * Store settings
-	 * 
-	 * run at activation
-	 *
-	 * @return customCountdown
-	 */
-
-
-	public function store_settings() {
-		
-		// check to see if they have options first
-		$options_check	= get_option('ccd_options');
-
-		// already have options? LEAVE THEM ALONE SIR		
-		if(!empty($options_check))
-			return;
-
-		// got nothin? well then, shall we?
-		$ccd_options['date']	= 'false';
-
-		update_option('ccd_options', $ccd_options);
-
-	}
 
 	/**
 	 * Display main options page structure
