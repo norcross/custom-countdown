@@ -11,10 +11,11 @@
 
 ## Description
 
-A slick, easy 'Coming Soon' theme for WordPress
+A slick, easy 'Coming Soon' theme for WordPress. Uses the custom header function inside WordPress plus a modified version of a jQuery Countdown script ( [original script](https://github.com/martinaglv/jQuery-Countdown) )
 
-##### Links
-* [Demo Site](http://sandbox.norcross.co/countdown/)
+
+**Demo Site**:
+[Demo Site](http://sandbox.norcross.co/countdown/)
 
 
 ## Installation
