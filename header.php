@@ -9,14 +9,15 @@
         <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" />
         
         
-        <!--[if lt IE 9]>
-          <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
+    <!--[if lt IE 9]>
+        <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/lib/css/ie.css" />
+    <![endif]-->
         <?php wp_head(); ?>
     </head>
 
 <body <?php body_class(); ?>>
-
+<div id="wrapper">
 <header>
-    <h1 class="logo"><img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="<?php bloginfo('name') ?>" /></h1>
+    <h1 class="logo"><img src="<?php header_image(); ?>" alt="<?php bloginfo('name') ?>" /></h1>
 </header>
+

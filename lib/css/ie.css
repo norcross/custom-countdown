@@ -1,23 +1,5 @@
-/*   
-Theme Name: Custom Countdown
-Theme URI: http://andrewnorcross.com/custom-countdown
-Description: A custom 'coming soon' theme with a jQuery Counter
-Author: Andrew Norcross
-Author URI: http://andrewnorcross.com
-Version: 1.0
-*/
-
-/*------------------------------------------------
-The jQuery Countdown script used can be found
-
-https://github.com/martinaglv/jQuery-Countdown
--------------------------------------------------*/
-
-
-
-
 /*-------------------------
-	Simple reset
+	IE styles
 --------------------------*/
 
 
@@ -68,7 +50,7 @@ section, footer{
 -----------------------------*/
 
 #wrapper {
-	width: 320px;
+	width: 600px;
 	margin: 0 auto;
 }
 
@@ -93,12 +75,12 @@ h1.logo {
 
 #note{
 	color: #666666;
-	font-size: 12px;
+	font-size: 14px;
 	margin: 0 auto 20px auto;
 	padding: 4px;
 	text-align: center;
 	text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
-	width: 300px;
+	width: 400px;
 }
 
 
@@ -107,10 +89,10 @@ h1.logo {
 -----------------------------*/
 
 .countdownHolder{
-	width:300px;
+	width:450px;
 	margin:0 auto;
 	font-family: "Open Sans Condensed", "Myriad Pro", "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
-	font-size: 24px;
+	font-size: 40px;
 	line-height: 1.5em;
 	text-align:center;
 	letter-spacing:-3px;
@@ -206,28 +188,4 @@ footer{
 	position: fixed;
 	width: 100%;
 	z-index: 100000;
-}
-
-
-
-/* Media queries!
--------------------------------------------------------------------------------*/
-
-@media only screen and (min-width: 481px) {
-
-#wrapper {
-	width: 960px;
-}
-
-#note{
-	font-size: 14px;
-	width: 400px;
-}
-
-.countdownHolder{
-	width:450px;
-	font-size: 40px;
-}
-
-
 }

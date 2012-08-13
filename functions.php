@@ -33,7 +33,7 @@ class customCountdown
 			'width'         => 500,
 			'flex-height'	=> true,
 			'height'        => 80,
-			'default-image' => get_template_directory_uri() . '/lib/img/banner-default.png',
+			'default-image' => get_template_directory_uri() . '/images/banner-default.png',
 		);
 		add_theme_support( 'custom-header', $args );
 
@@ -86,14 +86,17 @@ class customCountdown
                 settings_fields( 'ccd_options' );
 				$ccd_options	= get_option('ccd_options');
 
-				$launch_show = (isset($ccd_options['launch_disp']) ? $ccd_options['launch_disp'] : '');
-				$launch_hide = (isset($ccd_options['launch']) ? $ccd_options['launch'] : '');
+				// make a default date 2 weeks from now
+				$default_t	= time() + (14 * 24 * 60 * 60);
+				$twoweeks	= date('m/d/Y', $default_t);
+
+				$launch		= (isset($ccd_options['launch']) ? $ccd_options['launch'] : $twoweeks);
+
 				?>
         
 				<p>
-					<label for="ccd_options[launch_disp]">Launch Date</label>
-					<input type="text" id="ccd_launch" name="ccd_options[launch_disp]" class="timepicker" value="<?php echo $launch_show; ?>" />
-					<input type="hidden" name="ccd_options[launch]" id="ccd_launch_format" value="<?php echo $launch_hide; ?>" />					
+					<label for="ccd_options[launch]">Launch Date</label>
+					<input type="text" id="ccd_launch" name="ccd_options[launch]" class="timepicker" value="<?php echo $launch; ?>" />
                 
                 </p>
                
@@ -164,11 +167,9 @@ class customCountdown
 
 		// get the date saved
 		$ccd_options	= get_option('ccd_options');
-		$launch 		= substr($ccd_options['launch'], 0, -3); // jQuery stores milliseconds
+		$launch 		= $ccd_options['launch']; // jQuery stores milliseconds
 
-		echo '<input type="hidden" id="ccd_year" value="'.date('Y', $launch).'">';
-		echo '<input type="hidden" id="ccd_month" value="'.date('n', $launch).'">';
-		echo '<input type="hidden" id="ccd_day" value="'.date('j', $launch).'">';
+		echo '<input type="hidden" id="ccd_launch" value="'.$launch.'">';
 
 	}
 
