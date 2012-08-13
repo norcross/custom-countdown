@@ -33,16 +33,16 @@ https://github.com/martinaglv/jQuery-Countdown
 
 
 html{
-	background:url('images/tile_bg.jpg') #b0b0b0;
+	background:#a6a6a6;
 	position:relative;
 }
 
 body{
-	background:url('images/page_bg_center.jpg') no-repeat center center;
-	min-height: 600px;
-    padding: 150px 0 0;
+	background:#a6a6a6;
+    padding: 50px 0 0;
 	font:14px/1.3 'Segoe UI',Arial, sans-serif;
 }
+
 
 img,
 object,
@@ -213,7 +213,13 @@ footer{
 /* Media queries!
 -------------------------------------------------------------------------------*/
 
-@media only screen and (min-width: 481px) {
+@media only screen and (min-width: 600px) {
+
+body{
+	background:url('images/frame_bg.png') no-repeat center top #a6a6a6;
+    padding: 150px 0 0;
+    min-height: 500px;
+}
 
 #wrapper {
 	width: 960px;
